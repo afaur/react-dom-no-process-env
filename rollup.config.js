@@ -16,7 +16,7 @@ export default [
         writeBundle(bundle) {
           fs.writeFileSync(outFile,
             fs.readFileSync(outFile, 'utf-8')
-              .replace('process.env.NODE_ENV', JSON.stringify('development'))
+              .replace(/process.env.NODE_ENV/g, JSON.stringify('development'))
           )
         }
       }
